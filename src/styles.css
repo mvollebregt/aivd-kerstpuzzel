@@ -1,5 +1,6 @@
 app-char {
   display: inline-block;
   text-align: center;
+  vertical-align: middle;
   width: 15px;
 }

@@ -12,10 +12,17 @@ export class CharComponent implements DoCheck {
   @Output() mappingChanged = new EventEmitter<[string, string]>();
 
   mappedChar : string;
+  connected: boolean = true;
 
   mappedCharChanged() : void {
     this.mappedChar = this.mappedChar.toUpperCase();
-    this.mappingChanged.emit([this.inputChar, this.mappedChar]);
+    if (this.connected) {
+      this.mappingChanged.emit([this.inputChar, this.mappedChar]);
+    }
+  }
+
+  fixedChanged() : void {
+    this.neemMappingOver();
   }
 
   isLetter() : boolean {
@@ -23,6 +30,12 @@ export class CharComponent implements DoCheck {
   }
 
   ngDoCheck(): void {
-    this.mappedChar = this.mappings.get(this.inputChar);
+    this.neemMappingOver();
+  }
+
+  private neemMappingOver() {
+    if (this.connected) {
+      this.mappedChar = this.mappings.get(this.inputChar);
+    }
   }
 }

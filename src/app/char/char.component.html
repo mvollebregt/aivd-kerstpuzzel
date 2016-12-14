@@ -9,3 +9,5 @@
        maxlength="1">
 
 </label>
+
+<input *ngIf="isLetter()" type="checkbox" [(ngModel)]="connected" (input)="fixedChanged()"/>
