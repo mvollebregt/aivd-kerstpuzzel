@@ -1,0 +1,11 @@
+<label>
+
+  {{ inputChar }}
+
+  <input id="x"
+       *ngIf="isLetter()"
+       [(ngModel)]="mappedChar"
+       (input)="mappedCharChanged()"
+       maxlength="1">
+
+</label>

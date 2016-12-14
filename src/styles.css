@@ -1,1 +1,5 @@
-/* You can add global styles to this file, and also import other style files */
+app-char {
+  display: inline-block;
+  text-align: center;
+  width: 15px;
+}
